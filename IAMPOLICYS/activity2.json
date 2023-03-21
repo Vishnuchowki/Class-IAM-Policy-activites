@@ -1,0 +1,19 @@
+//Activity2: Create a custom IAM policy to perform any operation on EC2 but not terminate instances
+{
+    "Version": "2012-10-17",
+     "Statement" : [
+        {
+            "Effect" : "Allow",
+            "Action" : ["ec2:*"],
+            "Resource": ["*"]
+
+        },
+        {
+            "Effect" : "Deny",
+            "Action" : ["ec2:TerminateInstances"],
+            "Resource": ["*"] 
+
+        },
+
+    ]
+}

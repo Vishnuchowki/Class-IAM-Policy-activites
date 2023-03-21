@@ -1,0 +1,23 @@
+//Activity 4: Create an IAM Policy to Start and Stop Ec2 instances
+//Create an IAM Policy to Start and Stop Ec2 instances, if the ec2 instance is 
+//in ap-east-1 region and if in other regions only give read permissions
+
+
+{
+    "Version": "2012-10-17",
+     "Statement" : [
+        {
+            "Effect" : "Allow",
+            "Action" : ["ec2:Describe*", "ec2:StartInstances", "ec2:StopInstances"], 
+            "Resource": ["arn:aws:ec2:us-east-1:*:instance/*"]
+
+        },
+        {
+            "Effect" : "Allow",
+            "Action" : ["ec2:Describe*"],
+            "Resource": ["*"]
+
+        }
+    ]
+}
+

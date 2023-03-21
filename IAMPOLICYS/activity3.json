@@ -1,0 +1,22 @@
+//Activity 3: Create a Custom IAM Policy to perform any operation on s3, 
+//rds and ec2 but stop users from terminating, 
+//stopping ec2 and rds instances and removing s3 buckets
+
+{
+    "Version": "2012-10-17",
+     "Statement" : [
+        {
+            "Effect" : "Allow",
+            "Action" : ["ec2:*","s3:*","rds:*"],
+            "Resource": ["*"]
+
+        },
+        {
+            "Effect" : "Deny",
+            "Action" : ["ec2:TerminateInstances","ec2:StopInstances","rds:StopDBInstance","rds:DeleteDBInstance","s3:DeleteBucket"],
+            "Resource": ["*"] 
+
+        }
+    ]
+}
+

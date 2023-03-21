@@ -1,0 +1,26 @@
+//Activity 5: Create an IAM Policy to allow user 
+//to delete bucket if the region is only us-west-2
+
+
+{
+    "Version": "2012-10-17",
+     "Statement" : [
+        {
+            "Effect" : "Allow",
+            "Action" : ["s3:DeleteBucket"],
+            "Resource": ["*"],
+            "Condition" : {
+                "StringEquals" : {
+                        "aws:RequestedRegion": "us-west-2"
+                }
+            }
+        },
+        {
+            "Effect" : "Allow",
+            "Action": ["s3:listBuckets", "s3:ListAllMyBuckets"],
+            "Resource": ["*"]
+
+        }        
+    ]
+}
+

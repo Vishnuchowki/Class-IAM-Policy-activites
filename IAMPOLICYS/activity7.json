@@ -1,0 +1,19 @@
+//Activity 7: Allow user to Create ec2 instance if the type is 
+//t2.micro and region is mumbai
+
+{
+    "Version": "2012-10-17",
+     "Statement" : [
+        {
+            "Effect" : "Allow",
+            "Action" : ["ec2:RunInstances"],
+            "Resource": "*",
+            "Condition" : {
+                "StringEquals" : {
+                        "ec2:InstanceType": "t2.micro",
+                        "aws:Region": "ap-south-1"
+                }
+
+        }
+   ]
+}

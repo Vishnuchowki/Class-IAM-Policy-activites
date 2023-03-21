@@ -1,0 +1,18 @@
+//Activity 6: Create an IAM Policy to allow user 
+//to terminate instance if the type is t2.micro
+
+{
+    "Version": "2012-10-17",
+     "Statement" : [
+        {
+            "Effect" : "Allow",
+            "Action" : ["ec2:TerminateInstances"],
+            "Resource": "*",
+            "Condition" : {
+                "StringEquals" : {
+                        "ec2:InstanceType": "t2.micro"
+                }
+
+        }
+   ]
+}

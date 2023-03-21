@@ -1,0 +1,12 @@
+//Activity1: Create a custom IAM Policy to Start and Stop EC2 instances
+{
+    "Version": "2012-10-17",
+     "Statement" : [
+        {
+            "Effect" : "Allow",
+            "Action" : ["ec2:Describe*", "ec2:StartInstances", "ec2:StopInstances"],
+            "Resource": []
+
+        }    
+    ]
+}

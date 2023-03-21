@@ -1,0 +1,18 @@
+//create an IAM policy to give full access to ec2 in all regions 
+//but not in oregon
+
+{
+    "Version": "2012-10-17",
+     "Statement" : [
+        {
+            "Effect" : "Allow",
+            "Action" : ["ec2:*"],
+            "Resource": ["*"],
+            "Condition" : {
+                "StringNotEquals" : {
+                        "aws:RequestedRegion": "us-west-2"
+                }
+            }
+        }
+    ]
+}
